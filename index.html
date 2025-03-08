@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Color Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rainbow Color Detector</h1>
+        <div id="input-section">
+            <label>Choose Input Method:</label>
+            <select id="input-method">
+                <option value="image">Upload Image</option>
+                <option value="webcam">Use Webcam</option>
+            </select>
+            <div id="image-upload" class="input-option">
+                <input type="file" id="image-input" accept="image/*">
+            </div>
+            <div id="webcam-feed" class="input-option" style="display: none;">
+                <video id="video" autoplay style="display: none;"></video>
+                <canvas id="webcam-canvas" style="display: none;"></canvas>
+            </div>
+        </div>
+        <div id="canvas-section">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="button-section">
+            <label>Activation Key: 
+                <input type="text" id="activation-key" placeholder="e.g., Enter, Space, C" maxlength="10">
+            </label>
+            <p>Press the key to detect colors (after selecting an image or starting the webcam).</p>
+        </div>
+        <div id="result">
+            <h2>Detected Color</h2>
+            <p id="color-name">Waiting for detection...</p>
+            <p id="color-rgb">RGB: N/A</p>
+            <div id="color-sample"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
